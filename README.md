@@ -24,3 +24,36 @@ This repo will be populated with lots of fancy checks.
 *   **Ecosystem:**  The availability of tools and libraries for working with a particular format is also an important factor.  Parquet, JSON, and CSV have very wide ecosystem support.
 
 This table provides a more comprehensive overview of the different data storage formats, including their strengths, weaknesses, and typical use cases.  Remember that the "best" format depends on your specific needs.
+
+## Analytical Data Processing Architectures: A Comparison
+
+| Component/Feature | Data Lake | Data Warehouse | Data Lakehouse | OLAP Model (Cube) |
+|---|---|---|---|---|
+| **Data Storage** | File-based (raw, semi-structured, structured) | Relational tables (structured) | File-based with tabular abstractions (structured & unstructured) | Pre-aggregated relational (structured) |
+| **Data Processing** | ETL, Data Science workloads (Spark, etc.) | ETL, SQL queries | ETL, Data Science & SQL workloads (Spark, Delta Lake, etc.) | Aggregation, pre-calculation |
+| **Schema** | Flexible, schema-on-read | Fixed, schema-on-write | Flexible with schema enforcement capabilities | Fixed, pre-defined aggregations |
+| **Scalability** | Highly scalable | Scalable, but less flexible than data lakes | Highly scalable and flexible | Scalable, optimized for specific queries |
+| **Performance** | Varies depending on data format and processing engine | Optimized for read queries | Combines the performance of data warehouses with the flexibility of data lakes | Extremely fast for pre-defined aggregations |
+| **Data Types** | Handles diverse data types (raw, semi-structured, structured) | Primarily structured data | Handles diverse data types (raw, semi-structured, structured) | Primarily structured, aggregated data |
+| **User Roles** | Data Scientists, Data Engineers | Data Analysts, Business Analysts | Data Scientists, Data Engineers, Data Analysts | Business Users, Analysts |
+| **Use Cases** | Exploration, machine learning, data discovery | Reporting, dashboards, business intelligence | Combining exploration and reporting, advanced analytics | Fast reporting, multidimensional analysis, drill-down capabilities |
+| **Example Technologies** | Hadoop, Spark, Cloud Storage (AWS S3, Azure Blob Storage) | SQL Databases (PostgreSQL, Snowflake, BigQuery) | Delta Lake, Apache Hudi, Iceberg | MDX, OLAP servers (e.g., Microsoft Analysis Services) |
+
+
+## Analytical vs. Transactional Data Processing: A Comparison
+
+| Feature | Analytical Data Processing (OLAP) | Transactional Data Processing (OLTP) |
+|---|---|---|
+| **Purpose** | Analyze historical data, identify trends, support decision-making | Record transactions, support business operations |
+| **Data Characteristics** | Large volumes of historical data, often aggregated | High volume of current data, individual transactions |
+| **Data Operations** | Read-heavy, complex queries, aggregations | Read and write-heavy, simple, frequent operations (CRUD) |
+| **Schema** | Flexible (Data Lake, Data Lakehouse) or optimized for queries (Data Warehouse, OLAP Cube) | Fixed, normalized, optimized for transactions |
+| **Performance** | Optimized for complex queries, reporting, and analysis | Optimized for fast, reliable transaction processing |
+| **Scalability** | Scalable for large datasets and complex analysis | Scalable for high transaction volumes and concurrency |
+| **Data Consistency** | Important, but some latency may be acceptable | Critical, ACID properties enforced |
+| **Data Integrity** | Important, but some data quality issues may be tolerated | Critical, data integrity is paramount |
+| **Concurrency** | Lower concurrency requirements | High concurrency requirements, many users/applications accessing data simultaneously |
+| **Typical Users** | Data Scientists, Data Analysts, Business Users | Operational Staff, Customers (via applications) |
+| **System Focus** | Data exploration, reporting, visualization, business intelligence | Transaction logging, order processing, inventory management, financial transactions |
+| **Example Technologies** | Hadoop, Spark, Cloud Storage, SQL Databases, OLAP Servers | SQL Databases (MySQL, PostgreSQL, Oracle), NoSQL Databases, Mainframes |
+| **Key Concepts** | Data Lake, Data Warehouse, Data Lakehouse, OLAP Cube, ETL | Transactions, ACID properties, CRUD operations, Normalization |
