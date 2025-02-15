@@ -2,7 +2,7 @@
 Scripts that help check the health of my computers.
 
 This repo will be populated with lots of fancy checks.
-
+## 1.Explore Data Concepts
 ## Comparison of Data Storage Formats
 
 | Format | Type | Storage Structure | Schema Handling | Compression | Use Cases | Strengths | Weaknesses | Example (Simplified) |
