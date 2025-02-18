@@ -127,6 +127,39 @@ This table provides a more comprehensive overview of the different data storage 
 - **Choose Azure SQL Database** for a cost-effective, fully managed SQL Server option with reduced administrative overhead.
 - **Choose Azure Database for MySQL/MariaDB/PostgreSQL** if you need an open-source relational database with automatic scaling and management.
 
+# Azure SQL and Database Offerings - Comparative Overview
+
+## Provisioning Details
+| Feature                           | SQL Server on Azure VMs | Azure SQL Managed Instance | Azure SQL Database (Single Database) | Azure SQL Database (Elastic Pool) | Azure Database for MySQL | Azure Database for PostgreSQL | Azure Database for MariaDB |
+|-----------------------------------|-------------------------|----------------------------|--------------------------------------|----------------------------------|---------------------------|---------------------------|---------------------------|
+| Subscription & Resource Group     | ✅ Yes                   | ✅ Yes                      | ✅ Yes                                | ✅ Yes                            | ✅ Yes                    | ✅ Yes                    | ✅ Yes                    |
+| Compute & Storage                 | Various VM sizes & SQL Server editions | Various vCore & storage options | Basic, Standard, Premium, Serverless | Various eDTU/vCore & storage options | Burstable, General Purpose, Memory Optimized | Burstable, General Purpose, Memory Optimized | Burstable, General Purpose, Memory Optimized |
+
+## Security & Network
+| Feature                           | SQL Server on Azure VMs | Azure SQL Managed Instance | Azure SQL Database (Single Database) | Azure SQL Database (Elastic Pool) | Azure Database for MySQL | Azure Database for PostgreSQL | Azure Database for MariaDB |
+|-----------------------------------|-------------------------|----------------------------|--------------------------------------|----------------------------------|---------------------------|---------------------------|---------------------------|
+| Admin Username Restrictions       | N/A                     | N/A                        | Cannot use Azure, superuser, admin, etc. | Cannot use Azure, superuser, admin, etc. | Cannot use Azure, superuser, admin, etc. | Cannot use Azure, superuser, admin, etc. | Cannot use Azure, superuser, admin, etc. |
+| Network Security                  | VLANs, ACLs, Firewalls  | NSGs, Firewalls           | Firewalls, connection policies      | Firewalls, connection policies   | NSGs, Firewalls          | NSGs, Firewalls          | NSGs, Firewalls          |
+| Connection Policy                  | Redirect or Proxy      | Redirect or Proxy         | Redirect or Proxy                   | Redirect or Proxy                | Redirect or Proxy        | Redirect or Proxy        | Redirect or Proxy        |
+| Default Connection Port           | 1433                    | 1433                       | 1433                                 | 1433                             | 3306                      | 5432                      | 3306                      |
+| DoS Protection                    | ✅ DoSGuard             | ✅ DoSGuard                | ✅ DoSGuard                          | ✅ DoSGuard                      | ✅ DoSGuard               | ✅ DoSGuard               | ✅ DoSGuard               |
+| SSL Connection                    | Configurable           | Configurable              | Configurable                        | Configurable                     | Required                 | Required                 | Required                 |
+
+## Performance & Features
+| Feature                           | SQL Server on Azure VMs | Azure SQL Managed Instance | Azure SQL Database (Single Database) | Azure SQL Database (Elastic Pool) | Azure Database for MySQL | Azure Database for PostgreSQL | Azure Database for MariaDB |
+|-----------------------------------|-------------------------|----------------------------|--------------------------------------|----------------------------------|---------------------------|---------------------------|---------------------------|
+| Linked Server Support             | ✅ Fully Supported      | ✅ Supported               | ❌ Limited                          | ❌ Limited                      | ❌ Not Supported          | ❌ Not Supported          | ❌ Not Supported          |
+| Performance                        | High (depends on VM size) | High (near full SQL Server compatibility) | Medium (depends on DTU/vCores) | Medium (depends on eDTU/vCores) | Medium | Medium | Medium |
+| Security Control                   | Full control over security setup | Managed security with some control | Managed security with limited control | Managed security with limited control | Managed security with limited control | Managed security with limited control | Managed security with limited control |
+
+## Summary
+- **SQL Server on Azure VMs** provides full control and supports all features, including Linked Servers.
+- **Azure SQL Managed Instance** offers near-full SQL Server compatibility with a managed environment.
+- **Azure SQL Database (Single & Elastic Pool)** is best for cloud-native applications but has limitations with Linked Servers.
+- **Azure Database for MySQL, PostgreSQL, and MariaDB** are fully managed but do not support Linked Servers.
+
+🚀 Choose the right database service based on your workload, security, and integration needs.
+
 
 
 
