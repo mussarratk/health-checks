@@ -159,6 +159,9 @@ This table provides a more comprehensive overview of the different data storage 
 - **Azure Database for MySQL, PostgreSQL, and MariaDB** are fully managed but do not support Linked Servers.
 
 🚀 Choose the right database service based on your workload, security, and integration needs.
+![image](https://github.com/user-attachments/assets/347957fe-e518-4dba-909e-f81d0031b1ef) 
+- **PaaS Appracg - Azure SQL Database is a hassle-free way to run SQL Server in the cloud. Microsoft takes care of all the technical stuff, so you can focus on your data. It is very good for modern cloud applications.
+
 
 
 
