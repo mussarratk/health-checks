@@ -181,7 +181,7 @@ When you need to move a database solution to the cloud quickly, and with the lea
 https://learn.microsoft.com/en-us/training/modules/query-relational-data/6-exercise-perform-query?wt.mc_id=azsql_ex6prfmquery_webpage_extlp
 ![image](https://github.com/user-attachments/assets/effcb1b1-ca4f-4527-a461-0ae75b10c260)
 
-### Non-Relational
+# Non-Relational
 
 # Azure Storage Services Hierarchy and Details
 
@@ -293,6 +293,15 @@ This document outlines the hierarchy and key features of various Azure Storage s
 
 This comprehensive structure now incorporates the additional details you provided, offering a more in-depth view of each Azure Storage service.  Remember that the collapsible sections allow you to expand and collapse information as needed.
 
+## Benefits of embedding:
+
+* Improved read performance: When you retrieve the customer object, you get all their order information in a single operation. ** No need to make separate requests to fetch the orders. This significantly speeds up data retrieval.
+** Simplified queries: You don't need to perform joins or lookups to combine data from multiple sources.
+* Drawbacks of embedding: Data redundancy: If the same order information is needed in other contexts (e.g., displaying all orders), it will be duplicated in every customer object that has that order.
+** Increased storage space: Storing the same data multiple times consumes more storage.
+** Update complexity: If an order is modified, you need to update it in every customer object where it's embedded. This can be challenging to maintain data consistency.
+  - Embedding in JSON is a powerful technique for denormalizing data and improving read performance. It involves nesting related data directly within a JSON object.  However, it's essential to consider the trade-offs in terms of data redundancy, storage space, and update complexity before using it.  It's a common and effective strategy in NoSQL databases where optimizing for read speed is often a priority.
+![image](https://github.com/user-attachments/assets/5f4b2569-6612-4f1b-a495-477eff081739)
 
 
 
