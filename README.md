@@ -58,9 +58,9 @@ This table provides a more comprehensive overview of the different data storage 
 | **Example Technologies** | Hadoop, Spark, Cloud Storage, SQL Databases, OLAP Servers | SQL Databases (MySQL, PostgreSQL, Oracle), NoSQL Databases, Mainframes |
 | **Key Concepts** | Data Lake, Data Warehouse, Data Lakehouse, OLAP Cube, ETL | Transactions, ACID properties, CRUD operations, Normalization |
 
-### Relational Database
+#### Relational Database
 
-| Feature | SQL Server on Azure VMs | Azure SQL Managed Instance | Azure SQL Database (Single Database) | Azure SQL Database (Elastic Pool) | Azure Database for MySQL | Azure Database for MariaDB | Azure Database for PostgreSQL |
+| Feature | (SQL Server) on Azure VMs | Azure (SQL Server) Managed Instance | Azure (SQL Server) Database (Single Database) | Azure (SQL Server) Database (Elastic Pool) | Azure Database for MySQL | Azure Database for MariaDB | Azure Database for PostgreSQL |
 |---|---|---|---|---|---|---|---|
 | **Type of Cloud Service** | IaaS | PaaS | PaaS | PaaS | PaaS | PaaS | PaaS |
 | **SQL Server Compatibility** | Fully compatible with on-premises SQL Server. "Lift and shift" migration. | Near 100% compatible. Minimal code changes for migration. | Supports most core database-level capabilities. Some features may be unavailable. | Supports most core database-level capabilities. Some features may be unavailable. | MySQL compatible | MariaDB compatible | PostgreSQL compatible |
