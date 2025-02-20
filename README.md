@@ -181,6 +181,120 @@ When you need to move a database solution to the cloud quickly, and with the lea
 https://learn.microsoft.com/en-us/training/modules/query-relational-data/6-exercise-perform-query?wt.mc_id=azsql_ex6prfmquery_webpage_extlp
 ![image](https://github.com/user-attachments/assets/effcb1b1-ca4f-4527-a461-0ae75b10c260)
 
+### Non-Relational
+
+# Azure Storage Services Hierarchy and Details
+
+This document outlines the hierarchy and key features of various Azure Storage services, presented in a collapsible markdown format.
+
+## 1. Core Storage Concepts
+
+*   **Storage Account:** The fundamental unit of management and billing for Azure Storage.  All Azure Storage services reside within a storage account. Provides a unique namespace for your Azure Storage data. Required for Blob, File, and Table storage.
+*   **Containers/File Shares/Tables/Queues/Cosmos DB Containers:** Logical groupings of data within a storage account. The specific type depends on the storage service being used.
+*   **Blobs/Files/Entities/Messages/Documents:** The actual data objects stored within the containers/file shares/tables/queues/Cosmos DB containers.
+
+## 2. Azure Blob Storage (Unstructured Data)
+
+*   **Purpose:** Stores massive amounts of unstructured data (binary large objects). Ideal for binary large objects (BLOBs).
+*   **Key Features:**
+    *   **Blob Types:**
+        *   **Block Blobs:** Sets of blocks (up to 100 MB each, max 50,000 blocks, 4.7 TB max). Best for discrete, large, infrequently changing binary objects.
+        *   **Page Blobs:** Collections of 512-byte pages (up to 8 TB). Optimized for random read/write operations (used for VM disks).
+        *   **Append Blobs:** Block blobs optimized for append operations (blocks up to 4 MB, max 195 GB). Only append operations allowed.
+    *   **Containers:** Logical grouping of blobs within a storage account. Supports folder-like hierarchy. Container level access control. (Storage Account -> Containers -> Folders)
+    *   **Access Tiers:**
+        *   **Hot:** Frequently accessed data (high performance, higher cost). Milliseconds typical read latency.
+        *   **Cool:** Infrequently accessed data (lower performance, reduced cost). Milliseconds typical read latency.
+        *   **Archive:** Rarely accessed historical data (lowest cost, high latency). Hours to rehydrate.
+    *   **Access Tier Transitions:** Moving blobs between tiers. Rehydration is required for Archive.
+    *   **Lifecycle Management Policies:** Automated management of blob lifecycle.
+    *   **Redundancy:** LRS, GRS.
+    *   **Versioning:** Maintaining and restoring previous blob versions.
+    *   **Soft Delete:** Recovering accidentally deleted blobs.
+    *   **Snapshots:** Read-only versions of a blob at a specific point in time.
+    *   **Change Feed:** Ordered record of updates made to a blob.
+    *   **Block Blob Maximum Size:** 4.7 Terabytes (50,000 blocks x 100 MB).
+    *   **Page Blob Maximum Size:** 8 Terabytes.
+    *   **Append Blob Maximum Size:** 195 Gigabytes.
+    *   **Block Blob Block Size:** 100 Megabytes.
+    *   **Append Blob Block Size:** 4 Megabytes.
+    *   **Page Blob Page Size:** 512 Bytes.
+*   **Use Cases:** Serving images/documents, static website hosting, streaming, backup/restore, archiving, data analysis.
+
+## 3. Azure Files (Cloud-Based File Shares)
+
+*   **Purpose:** Provides cloud-based network file shares, accessible via SMB 3.0.
+*   **Key Features:**
+    *   **Access Protocol:** SMB 3.0.
+    *   **Authentication:** Azure Active Directory Domain Services.
+    *   **Max Share Size:** 100 Terabytes (per storage account).
+    *   **Max File Size:** 1 Terabyte.
+    *   **Concurrent Connections:** 2,000 (per shared file).
+    *   **Upload Methods:** Azure Portal, AzCopy, Azure File Sync.
+    *   **Performance Tiers:** Standard (HDD), Premium (SSD).
+    *   **Data Replication:** Locally and Geo-redundant.
+    *   **Throughput:** Up to 300 MB/s (Standard). Premium provides higher throughput.
+    *   **Data Encryption:** At rest and in transit.
+*   **Use Cases:** Application migration, server data sharing, modern application integration, high availability workloads.
+*   **Important Considerations:** Not ideal for multiple concurrent writers without synchronization. Potential data overwrite issues without proper file locking.
+
+## 4. Azure Table Storage (NoSQL Key-Value Store)
+
+*   **Purpose:** Stores semi-structured, denormalized data in a NoSQL key-value format.
+*   **Key Features:**
+    *   **Data Model:** Key-value model, denormalized.
+    *   **Partitions:** Tables are split into partitions.
+    *   **Data Replication:** 3 times within an Azure region.
+*   **Advantages:** Flexible, semi-structured data, no complex relationship mapping.
+*   **Limitations:** Lacks relational database features.
+*   **Use Cases:** User data, configuration information, log data.
+
+## 5. Microsoft OneLake (Unified Data Lake)
+
+*   **Foundation:** Built on Azure Data Lake Storage Gen2.
+*   **Purpose:** Provides a single, unified, logical data lake for an entire organization.
+*   **Key Features:**
+    *   **Organization-wide Data Lake:** Centralized repository for all analytics data.
+    *   **Distributed Ownership:** Workspaces enable team management while maintaining governance.
+    *   **Open and Compatible:** Uses Delta Parquet format, supports ADLS Gen2 APIs.
+    *   **Easy Navigation:** OneLake file explorer for Windows.
+    *   **Shortcuts:** Virtualization of data across domains without duplication.
+    *   **Security:** Microsoft Entra ID integration.
+    *   **Integration with Fabric Workloads:** Seamless integration with all Fabric services.
+*   **Relationship to ADLS Gen2:** OneLake is a higher-level abstraction that simplifies the use of ADLS Gen2.  It leverages the underlying storage capabilities of ADLS Gen2.
+
+## 6. Azure Data Lake Storage Gen2 (ADLS Gen2)
+
+*   **Purpose:**  A massively scalable and secure data lake service for big data analytics.  Combines the power of Azure Blob Storage with the hierarchical namespace of Azure Files.
+*   **Key Features:**
+    *   **Hierarchical Namespace:** Organizes data into directories and subdirectories, improving manageability and performance.
+    *   **POSIX Permissions:** Supports access control lists (ACLs) for fine-grained permissions.
+    *   **Scalability and Performance:** Optimized for large-scale data processing.
+    *   **Integration with Azure Ecosystem:** Works seamlessly with other Azure services.
+*   **Note:**  ADLS Gen2 is the underlying storage for OneLake.
+
+## 7. Azure Cosmos DB (Multi-Model NoSQL Database)
+
+*   **Purpose:** Multi-model NoSQL database. Manages data as partitioned sets of documents.
+*   **Key Features:**
+    *   **Data Model:** Document-based (JSON-like).
+    *   **Document Structure:** Flexible, schema-free.
+    *   **Document Size Limit:** 2 Megabytes (including small binary objects).
+    *   **APIs:** SQL, Table, MongoDB, Cassandra, Gremlin.
+    *   **Containers:** Logical grouping of documents.
+    *   **Partitions:** Group documents with a common partition key.
+    *   **Indexing:** Automatic indexing of all fields.
+    *   **Scalability:** Highly scalable, automatic partition management.
+    *   **Availability:** 99.99% high availability.
+    *   **Consistency Levels:** Five well-defined consistency levels.
+    *   **Latency:** Less than 10ms for reads and writes (99th percentile).
+    *   **Security:** Encryption at rest and in transit, row-level authorization.
+*   **Use Cases:** IoT, e-commerce, gaming, web and mobile applications.
+
+This comprehensive structure now incorporates the additional details you provided, offering a more in-depth view of each Azure Storage service.  Remember that the collapsible sections allow you to expand and collapse information as needed.
+
+
+
 
 
 
