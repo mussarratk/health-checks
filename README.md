@@ -172,7 +172,17 @@ IaaS offerings like SQL virtual machines provide maximum control and compatibili
 When you need to move a database solution to the cloud quickly, and with the least amount of disruption, IaaS is the best option.
 - Azure Database for MySQL High availability. Easy scaling that responds quickly to demand. Secure data, both at rest and in motion. Automatic backups and point-in-time restore for the last 35 days.
 - Azure PostgreSQL Hyperscale (Citus) is a deployment option that scales queries across multiple server nodes to support large database loads. Your database is split across nodes.
-- 
+
+  ![image](https://github.com/user-attachments/assets/2bb42a7d-d80d-4487-b113-4c1f222784c2)
+![image](https://github.com/user-attachments/assets/3b5425c3-0421-47f4-a225-757ca2055396)
+![image](https://github.com/user-attachments/assets/36ffbbbf-2bf8-4072-b099-ba3066e152b1)
+![image](https://github.com/user-attachments/assets/b5a60c85-ba63-42d8-b4b1-bc0843ae9fd2)
+
+https://learn.microsoft.com/en-us/training/modules/query-relational-data/6-exercise-perform-query?wt.mc_id=azsql_ex6prfmquery_webpage_extlp
+![image](https://github.com/user-attachments/assets/effcb1b1-ca4f-4527-a461-0ae75b10c260)
+
+
+
 
 
 
