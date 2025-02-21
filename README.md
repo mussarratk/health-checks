@@ -311,10 +311,149 @@ This comprehensive structure now incorporates the additional details you provide
 ![image](https://github.com/user-attachments/assets/7634aee3-339f-4969-979b-2fd79411a685)
 ![image](https://github.com/user-attachments/assets/13fc8197-577d-4882-825b-7292db7f709b)
 
+# Data Warehousing
+![image](https://github.com/user-attachments/assets/74940346-87b2-4544-b36a-f4abeadc55a6)
+
+![image](https://github.com/user-attachments/assets/dd0707ae-d322-4634-b255-13103f638617) ![image](https://github.com/user-attachments/assets/8f555754-2823-4221-ad5b-8aa1ebc6c671)
+
+![image](https://github.com/user-attachments/assets/a68c108c-a87d-4b0d-a134-891a2664ba12)
+![image](https://github.com/user-attachments/assets/01d25571-f36b-4b6f-9fc8-fa823b78d09e) ![image](https://github.com/user-attachments/assets/439df014-61a1-4dd6-9608-0967dada8064)
+
+![image](https://github.com/user-attachments/assets/89dabdc2-59ba-4554-b524-d0378ea740a9) ![image](https://github.com/user-attachments/assets/a3af4d2c-fc34-47ea-b7fb-f473c8c0985e)
+![image](https://github.com/user-attachments/assets/7eb4b314-3d4e-46a3-93a7-8adc51215157) ![image](https://github.com/user-attachments/assets/78e7bbbb-dd0d-4f89-adc4-bfc2f619faea)
+
+### Analysis Services - ![image](https://github.com/user-attachments/assets/1713af2e-dd56-4ae0-a46a-d5b931b5e4e0)
+
+![image](https://github.com/user-attachments/assets/d08abb86-ebfd-4803-acd0-7b4d4720118a) ![image](https://github.com/user-attachments/assets/4487301d-5bd1-47d7-aa5e-ed4f40383624)
+
+![image](https://github.com/user-attachments/assets/b39f7d2a-81ba-46ad-bc82-92edec5450ef)
+
+![image](https://github.com/user-attachments/assets/6bb2b357-9a1e-4eff-bad2-7e6aed767cc7)
+
+* A data lake and a data warehouse both store large quantities of data. However, a data lake holds raw data while a data warehouse holds structured information.
+
+* Data presented to the Azure Data Factory may originate from many formats including relational and non-relational formats.
+* The Control node is the brain of the architecture. It's the front end that interacts with all applications. The MPP engine runs on the Control node to optimize and coordinate parallel queries. When you submit a processing request, the Control node transforms it into smaller requests that run against distinct subsets of the data in parallel.
+* Use Azure Synapse Analytics for very high volumes of data (multi-terabyte to petabyte sized datasets). over Azure Analysis Service.
+### Ingest data using Azure Data Factory
+![image](https://github.com/user-attachments/assets/49f0d0cd-b1eb-411f-8fca-37ec4a84bda8) ![image](https://github.com/user-attachments/assets/05638b33-4560-4dd2-b6dc-fa3546f6a788)
+![image](https://github.com/user-attachments/assets/ba90738c-43d0-4e3d-b35a-867f33990322) ![image](https://github.com/user-attachments/assets/4a911011-8d12-47f8-8259-48c7ac43f3af)
+
+![image](https://github.com/user-attachments/assets/345d4d30-8acc-4b7e-b87b-1dadbc638dd8) ![image](https://github.com/user-attachments/assets/06a5633a-7415-4fe6-b274-ab55a15d6b38)
+
+![image](https://github.com/user-attachments/assets/e8c42928-8fab-449f-973a-ac36c302929c)
+### Polybase
+![image](https://github.com/user-attachments/assets/220aa33b-7d6d-4da5-b5d1-8ab9742d5ec0) ![image](https://github.com/user-attachments/assets/3b3ac2ff-ee1f-4091-bb08-e89b0e41cbb5)
+* Orchestration is the process of directing and controlling other services, and connecting them to allow data to flow between them. Data Factory uses orchestration to combine and automate sequences of tasks that use different services to perform complex operations.
+* * Data Factory moves data from a data source to a destination. A linked service provides the information needed for Data Factory to connect to a source or destination such as Azure Blob Storage linked service to connect a storage account to Data Factory, or the Azure SQL Database linked service to connect to a SQL database.
+  * You can use mapping to transform your data from the input format to the output format. The columns from the input data can be mapped to the data format required by the output.
+* SSIS is an on-premises utility. However, Azure Data Factory allows you to run your existing SSIS packages as part of a pipeline in the cloud. This allows you to get started quickly without having to rewrite your existing transformation logic.
+* PolyBase is a feature of SQL Server and Azure Synapse Analytics that enables you to run Transact-SQL queries that read data from external data sources.
+* Azure Databricks → A big data analytics and machine learning platform based on Apache Spark, used for processing large-scale data workloads.
+* Azure Data Factory → A data integration and orchestration service that helps in ETL (Extract, Transform, Load) processes.
+* Azure Synapse Analytics → A data warehouse and analytics platform that enables big data processing and querying using T-SQL and Spark.
+  * Azure Data Studio → Incorrect, because Azure Data Studio is a database management and query tool
+  * Azure Synapse Analytics is a generalized analytics service that supports multiple technologies for processing data:
+* Transact-SQL (T-SQL) → Used for querying and managing structured data in Synapse's dedicated and serverless SQL pools.
+* Spark → Used for big data processing, machine learning, and analytics through Apache Spark pools in Synapse.
+* Azure HDInsight is a fully managed cloud-based big data analytics service that is based on Apache Hadoop. It provides an enterprise-grade Hadoop ecosystem, supporting various open-source frameworks such as:
+
+Apache Spark (for fast big data processing)
+Apache Hive (for SQL-based querying on big data)
+Apache HBase (for NoSQL workloads)
+Apache Kafka (for real-time data streaming)
+* Apache Storm is a real-time, distributed stream processing framework that runs on Azure HDInsight. It is designed for fault-tolerant, scalable, and low-latency processing of streaming data.
+* Azure Data Lake Storage (ADLS) Gen2 provides:
+✔ Hierarchical File System (HFS) → Supports directories and file organization, improving performance for big data workloads.
+✔ Granular Security → Uses role-based access control (RBAC) and ACLs (Access Control Lists) for fine-grained permissions.
+✔ Supports both raw (blob) and structured data → It can store raw, semi-structured, and structured data, making it ideal for big data analytics and data lakes.
+* Azure Data Lake Analytics uses U-SQL as its primary language for defining and executing jobs. U-SQL is a combination of SQL and C#, allowing developers to query, transform, and process big data efficiently in Azure Data Lake Storage.
+* You define a job using a language called U-SQL. This is a hybrid language that takes features from both SQL and C#, and provides declarative and procedural capabilities that you can use to process data.
+
+* Azure Synapse Analytics consists of multiple components to handle both data warehousing and big data analytics:
+
+** Synapse SQL pool → Supports T-SQL-based querying for structured data, including dedicated and serverless SQL pools.
+** Synapse Spark pool → Provides an Apache Spark-based environment for big data processing, machine learning, and analytics.
+** Synapse Pipelines → A built-in ETL/ELT orchestration service, similar to Azure Data Factory, for moving and transforming data.
+
+* Data Lake Store provides a file system that can store near-limitless quantities of data. It uses a hierarchical organization (like the Windows and Linux file systems), and can hold massive amounts of raw data (blobs) and structured data. It is optimized for analytics workloads.
+
+* Synapse SQL pool is a collection of servers running Transact-SQL. You write your data processing logic using Transact-SQL.
+* A Synapse pipeline is a logical grouping of activities that together perform a task. The activities in a pipeline define actions to perform on your data.
+* * In Azure Data Factory (ADF), pipelines can be created using both a graphical user interface (GUI) and custom code:
+
+Graphical UI (ADF Studio) → A no-code/low-code visual designer that allows users to drag and drop activities to build pipelines.
+Custom Code (JSON & SDKs) → Pipelines can be defined using JSON templates, PowerShell, .NET, Python SDKs, or Azure Resource Manager (ARM) templates for automation and deployment.
+** In Azure Data Lake, a staging area is a temporary storage location where raw data is initially stored before transformation and processing. It helps with:
+
+Data ingestion from various sources (databases, APIs, IoT, etc.)
+Data validation and cleaning before moving to a structured format
+Performance optimization by separating raw data from transformed data
+
+* Azure Data Lake Storage (ADLS) Gen2 is designed for big data storage and analytics and includes the following key features:
+
+Directories and subdirectories support → Unlike traditional blob storage, ADLS Gen2 provides a hierarchical namespace, allowing for directories and subdirectories to improve file organization and performance.
+
+Hadoop Distributed File System (HDFS) support → ADLS Gen2 is HDFS-compatible, meaning it integrates well with big data frameworks like Apache Spark, Hadoop, and Databricks.
+
+Support for Role-Based Access Control (RBAC) → ADLS Gen2 supports RBAC and Access Control Lists (ACLs), enabling fine-grained security and access management.
+* Azure Databricks is a fast, easy-to-use, and collaborative Apache Spark-based analytics service fully integrated with Microsoft Azure. It supports:
+
+Azure Databricks is a managed SaaS offering that provides Apache Spark clusters as a service, reducing infrastructure management overhead.
+Machine learning → Yes ✅
+
+It includes MLflow for experiment tracking and integrates with Azure Machine Learning, enabling AI and ML model development.
+Streaming → Yes ✅
+
+Supports real-time data processing using Structured Streaming with Apache Spark, making it ideal for handling streaming data from sources like Kafka, Event Hubs, and IoT devices.
+Big data processing → Yes ✅
+
+Optimized for distributed big data processing, allowing users to run large-scale ETL, data transformations, and analytics on petabyte-scale datasets.
+* ****** chaeck this *** PolyBase allows T-SQL queries to access and join data from external sources (such as Azure Blob Storage, Azure Data Lake, Hadoop, and other relational databases) without moving the data.
+
+To enable PolyBase in SQL Server, client connection software (also known as ODBC drivers or connectors) is required to establish connections with external data sources.
+
+Key Points:
+PolyBase enables querying and joining external data using T-SQL.
+It requires external data source connectors (like ODBC, JDBC) for integration.
+Helps in virtualizing data without the need for ETL (Extract, Transform, Load) processes.
+* In Azure Data Factory (ADF), ingestion tasks are triggered using pipelines, which define the workflow for data movement and transformation.
+
+Pipeline → ✅ Correct
+
+A pipeline is a logical grouping of activities that ingests, processes, and moves data from source to destination.
+It can be scheduled, event-triggered, or manually triggered.
+* * HTAP (Hybrid Transactional Analytical Processing) is a modern approach that allows organizations to analyze operational data in real-time within its original location, without needing to move it to a separate data warehouse.
+
+Why HTAP?
+Traditional data warehouses require data to be extracted, transformed, and loaded (ETL) before analysis, which adds latency.
+HTAP systems allow for real-time analytics on transactional data, reducing delays and improving decision-making.
+It combines transactional (OLTP) and analytical (OLAP) processing within the same system.
+* This strategy is known as hybrid transactional analytical processing (HTAP). You can perform this style of analysis over data held in repositories such as Azure Cosmos DB using Azure Synapse Link.
 
 
+* Apache Hive is a data warehouse system built on top of Hadoop that provides an SQL-like query language called HiveQL. It is designed for:
 
+Querying large datasets stored in Hadoop
+Aggregating and summarizing data efficiently
+Transforming data using SQL-like syntax
+* Apache Kafka is a distributed event streaming platform used for real-time data ingestion and processing. It is designed to:
 
+Ingest large volumes of streaming data from various sources in real-time.
+Process and distribute messages across multiple consumers efficiently.
+Provide fault-tolerant and scalable streaming capabilities.
+
+* A data lake is a repository for large quantities of raw data. Because the data is raw and unprocessed, it's very fast to load and update, but the data hasn't been put into a structure suitable for efficient analysis. You can think of a data lake as a staging point for your ingested data before it's massaged and converted into a format suitable for performing analytics.
+
+* Pipelines can be triggered to run activities for ingesting data.
+
+* Power BI is built on a few key building blocks that help users analyze and present data effectively:
+
+🔹 Visualizations – Graphical representations of data (charts, graphs, maps, etc.).
+🔹 Datasets – Collections of data imported or connected to Power BI.
+🔹 Reports – Multi-page collections of visualizations based on a dataset.
+🔹 Dashboards – Single-page collections of visualizations from multiple reports.
+🔹 Tiles – Individual visualizations pinned to a dashboard.
 
 
 
