@@ -302,6 +302,20 @@ This comprehensive structure now incorporates the additional details you provide
 ** Update complexity: If an order is modified, you need to update it in every customer object where it's embedded. This can be challenging to maintain data consistency.
   - Embedding in JSON is a powerful technique for denormalizing data and improving read performance. It involves nesting related data directly within a JSON object.  However, it's essential to consider the trade-offs in terms of data redundancy, storage space, and update complexity before using it.  It's a common and effective strategy in NoSQL databases where optimizing for read speed is often a priority.
 ![image](https://github.com/user-attachments/assets/5f4b2569-6612-4f1b-a495-477eff081739)
+![image](https://github.com/user-attachments/assets/7e52c044-8779-4722-895e-1b940e72728c)
+![image](https://github.com/user-attachments/assets/1c830ad7-3214-48be-b95a-15f078b1fe62)
+![image](https://github.com/user-attachments/assets/a54fa23e-1175-4dfb-afb7-6815ca7e5937)
+![image](https://github.com/user-attachments/assets/874a2c42-cba2-4545-a0de-7fe4c85a1078)
+![image](https://github.com/user-attachments/assets/8aa60a5a-abec-4ff1-8db4-7f3f68ef3f59)
+![image](https://github.com/user-attachments/assets/47dac09c-c109-48f4-8e2d-bc3dcc7e9659)
+![image](https://github.com/user-attachments/assets/7634aee3-339f-4969-979b-2fd79411a685)
+![image](https://github.com/user-attachments/assets/13fc8197-577d-4882-825b-7292db7f709b)
+
+
+
+
+
+
 
 
 
