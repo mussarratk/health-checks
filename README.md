@@ -455,8 +455,10 @@ Provide fault-tolerant and scalable streaming capabilities.
 🔹 Dashboards – Single-page collections of visualizations from multiple reports.
 🔹 Tiles – Individual visualizations pinned to a dashboard.
 
+![image](https://github.com/user-attachments/assets/438c4be8-cc22-4ae4-a4de-04b5c864ce3e)
 
 
+![image](https://github.com/user-attachments/assets/65e644de-cfb5-44cb-a408-5f17c96fa019)
 
 
 
